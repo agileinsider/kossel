@@ -22,7 +22,7 @@ difference() {
   union() {
     
     translate([0, (1+cos(mount_angle))*bracket_width/2-sin(mount_angle)*mount_thickness/2, sin(mount_angle)*bracket_width/2 - (1-cos(mount_angle))*mount_thickness/2]) rotate(a=mount_angle, v=[1,0,0]) difference() {
-      translate([0, -bracket_width/4, 0]) cube([bracket_width, bracket_width/2, mount_thickness], center=true);
+      translate([0, -3/8*bracket_width, 0]) cube([bracket_width, bracket_width/4, mount_thickness], center=true);
       cylinder(r=fan_radius, h=mount_thickness, center=true);
       translate([-(fan_radius-hole_offset), -(fan_radius-hole_offset), 0])cylinder(r=m3_wide_radius, h=mount_thickness, center=true);
       translate([(fan_radius-hole_offset),  -(fan_radius-hole_offset), 0])cylinder(r=m3_wide_radius, h=mount_thickness, center=true);
