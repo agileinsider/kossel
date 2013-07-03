@@ -9,7 +9,7 @@ hole_radius = 12.5;
 
 // Slot and lip for installation
 slot_radius = 6.25;
-lip_radius = 7.75;
+lip_radius = 8.1;
 lip_thickness = 1;
 
 $fn = 40;
