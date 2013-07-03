@@ -4,22 +4,22 @@ use <microswitch.scad>;
 
 height = 26;
 height2 = 26;
-tunnel = 2.4;
+tunnel = 3;
 face_offset = 4;
 
 module foot() {
   difference() {
     translate([12.5, 0, 0]) rotate([0, 0, -60])
       translate([-12.5, 0, 1]) rotate([0, 0, -60]) union() {
-        cylinder(r=5, h=2, center=true, $fn=24);
+        cylinder(r=4, h=2, center=true, $fn=24);
         translate([10, 0, 0])
-          cube([20, 10, 2], center=true);
+          cube([20, 8, 2], center=true);
     }
     translate([0, -10, 0])
       cube([40, 20, 20], center=true);
     translate([12.5, 0, 0]) {
       // Space for bowden push fit connector.
-      cylinder(r=6.49, h=3*height, center=true, $fn=32);
+      cylinder(r=7, h=3*height, center=true, $fn=32);
       for (a = [60:120:359]) {
 	    rotate([0, 0, a]) translate([-12.5, 0, 0])
           cylinder(r=m3_wide_radius, h=20, center=true, $fn=12);
