@@ -1,14 +1,17 @@
 include <configuration.scad>;
 
-belt_width = 6;
-belt_thickness = 0.8;
-belt_pitch = 2.0;
-tooth_radius = 0.6;
-path_height = belt_width + 1;
+// Belt parameters
+belt_width = 6;                    // width of the belt, typically 6 (mm)
+belt_thickness = 1.0 - 0.05;       // slightly less than actual belt thickness for compression fit (mm)           
+belt_pitch = 2.0;                  // tooth pitch on the belt, 2 for GT2 (mm)
+tooth_radius = 0.8;                // belt tooth radius, 0.8 for GT2 (mm)
 
+// Overall clamp dimensions
 clamp_width = 15;
 clamp_length = 15;
 clamp_base = 4;
+
+path_height = belt_width + 1;
 clamp_thickness = path_height+clamp_base;
 
 $fn = 40;
@@ -34,13 +37,11 @@ difference() {
 
   // Belt teeth
   for (theta = [0:dTheta_inside:pi/2]) {
-    translate([(clamp_inside_radius+belt_thickness-tooth_radius)*cos(theta*180/pi),(clamp_inside_radius+belt_thickness-tooth_radius)*sin(theta*180/pi),clamp_base])
-      rotate(a=theta*180/pi, v=[0,0,1])
-      cube([2*tooth_radius, 1.5*tooth_radius, path_height]);
+    translate([clamp_inside_radius*cos(theta*180/pi),clamp_inside_radius*sin(theta*180/pi),clamp_base]) cylinder(r=tooth_radius, h=path_height);
   }
   for (theta = [0:dTheta_outside:pi/2]) {
-    translate([clamp_width-(clamp_outside_radius-belt_thickness+tooth_radius)*cos(theta*180/pi),clamp_length-(clamp_outside_radius-belt_thickness+tooth_radius)*sin(theta*180/pi),clamp_base])
-      rotate(a=theta*180/pi, v=[0,0,1])
-      cube([2*tooth_radius, 1.5*tooth_radius, path_height]);
+    translate([clamp_width-clamp_outside_radius*cos(theta*180/pi),clamp_length-clamp_outside_radius*sin(theta*180/pi),clamp_base]) cylinder(r=tooth_radius, h=path_height);
   }
+
+
 };
