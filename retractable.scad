@@ -4,9 +4,9 @@ use <microswitch.scad>;
 
 height = 26;
 height2 = 26;
-tunnel = 3.2; // approx. diameter of the hex trigger (mm)
-retracted_angle = 20; // angle of the hex when retracted (degrees)
-d_spring = 1.5; // diameter of the spring (mm)
+tunnel = 3.2;           // approx. diameter of the hex trigger (mm)
+retracted_angle = 35;   // angle of the hex when retracted (degrees)
+d_spring = 1.5;         // diameter of the spring (mm)
 face_offset = 4;
 
 module foot() {
