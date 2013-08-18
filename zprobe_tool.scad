@@ -2,9 +2,9 @@ include <configuration.scad>;
 
 r_base = 5;             // radius of the tool base (mm)
 h_base = 5;             // height of the tool base (mm)
-l_tool = 45;            // center-to-center length of the base (mm)
-r_tool = 3;             // radius of the tool that sticks up beyond the bed (mm)
-h_tool = 45;            // height of the tool above the base (mm)
+l_tool = 35;            // center-to-center length of the base (mm)
+r_tool = 4;             // radius of the tool that sticks up beyond the bed (mm)
+h_tool = 60;            // height of the tool above the base (mm)
 $fn = 40;
 
 difference() {

@@ -7,7 +7,10 @@
  */
 
 // Examples:
-metric_thread(8, 1, 8);
+difference() {
+  translate([0,0,4]) cube([12,12,8], center=true);
+  metric_thread(5.4, 0.8, 8, internal=true);
+}
 
 //english_thread(1/4, 10, 1);
 

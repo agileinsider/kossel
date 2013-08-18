@@ -1,10 +1,10 @@
 include <configuration.scad>;
 
-d_probe = 3.1 + 2*extra_radius; // probe diameter (mm)
-d_clamp = 7.5;                    // outside diameter of the clamp (mm)
+d_probe = 3.9 + 2*extra_radius; // probe diameter (mm)
+d_clamp = 8;                    // outside diameter of the clamp (mm)
 h_clamp = 8;                    // clamp heigth (mm)
 d_nut = 6.7 + 2*extra_radius;   // hex nut diameter (mm)
-h_nut = 2.5 + 2*extra_radius;   // hex thickness (mm)
+h_nut = 4 + 2*extra_radius;     // hex thickness (mm)
 delta_nut = 0.8;                // slight nut shift toward zprobe and space on the opposite side (mm)
 $fn = 40;
 

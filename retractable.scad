@@ -4,7 +4,7 @@ use <microswitch.scad>;
 
 height = 26;
 height2 = 26;
-tunnel = 3.2;           // approx. diameter of the hex trigger (mm)
+tunnel = 3.9;           // approx. diameter of the hex trigger (mm)
 retracted_angle = 35;   // angle of the hex when retracted (degrees)
 d_spring = 1.5;         // diameter of the spring (mm)
 face_offset = 4;
@@ -52,16 +52,16 @@ module retractable() {
     }
     translate([-19, 0, height/2+6]) rotate([0, 15, 0])
       cube([20, 20, height], center=true);
-    cylinder(r=tunnel/2+extra_radius, h=3*height, center=true, $fn=12);
-    translate([0, -6, height/2+12])
-      cube([tunnel, 12, height], center=true);
-    rotate([0, 0, retracted_angle]) translate([0, -6, height/2+22])
-      cube([tunnel, 12, height], center=true);
+    translate([-1.1,0,0]) cylinder(r=tunnel/2+extra_radius, h=3*height, center=true, $fn=20);
+    translate([-1.1, 0, 0]) rotate(v=[0,0,1], a=10) translate([0, -6, height/2+8])
+      cube([tunnel+2*extra_radius, 12, height], center=true);
+    translate([-1.1, 0, 0]) rotate([0, 0, 10+retracted_angle]) translate([0, -6, height/2+22])
+      cube([tunnel+2*extra_radius, 12, height], center=true);
 
     // Safety needle spring.
-    translate([-4.5, 0, height-11]) rotate([90, 0, 0])
+    translate([-1.1,0,0]) translate([-4.5, 0, height-11]) rotate([90, 0, 0])
       cylinder(r=2.5/2, h=40, center=true, $fn=12);
-    translate([-4, 0, height-2]) rotate([90, 0, 0])
+    translate([-1.1,0,0]) translate([-4, 0, height-2]) rotate([90, 0, 0])
       cylinder(r=d_spring/2, h=40, center=true, $fn=12);
 
     // Effector screw heads.

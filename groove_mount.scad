@@ -2,15 +2,15 @@ include <configuration.scad>;
 
 // Overall mount dimensions
 mount_radius = 18;
-mount_thickness = 6;
+mount_thickness = 2.5;
 
 // Through holes
 hole_radius = 12.5;
 
 // Slot and lip for installation
-slot_radius = 6.25;
-lip_radius = 8.1;
-lip_thickness = 1;
+slot_radius = 6;
+lip_radius = 8.2;
+lip_thickness = 0;
 
 $fn = 40;
 

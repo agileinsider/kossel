@@ -3,7 +3,7 @@ include <configuration.scad>;
 separation = 40;  // Distance between ball joint mounting faces.
 offset = 20;  // Same as DELTA_EFFECTOR_OFFSET in Marlin.
 mount_radius = 12.5;  // Hotend mounting screws, standard would be 25mm.
-hotend_radius = 8;  // Hole for the hotend (J-Head diameter is 16mm).
+hotend_radius = 8.2;  // Hole for the hotend (J-Head diameter is 16mm).
 push_fit_height = 4;  // Length of brass threaded into printed plastic.
 height = 8;
 cone_r1 = 2.5;
